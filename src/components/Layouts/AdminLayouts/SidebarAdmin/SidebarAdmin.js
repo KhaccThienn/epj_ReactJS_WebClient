@@ -1,6 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
+import { clearUser, selectUserData } from '../../../../redux/reducers/user';
+import { useCookies } from 'react-cookie';
 
 function SidebarAdmin() {
+    const [reload, setReload] = useState(false);
+    const [cookies, setCookie, removeCookie] = useCookies(["user", "access_token", "refresh_token"]);
+    const userData = useSelector(selectUserData);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleLogOut = async () => {
+        const choose = await Swal.fire({
+            title: "Do You Want To Log Out ?",
+            showDenyButton: true,
+            confirmButtonText: "Yes",
+            denyButtonText: "No",
+        });
+        if (choose.isConfirmed) {
+            removeCookie("user");
+            removeCookie("access_token");
+            localStorage.removeItem('access_token');
+            dispatch(clearUser());
+            navigate('/');
+            setReload(!reload);
+            Swal.fire({
+                title: "You Logged Out Successfully",
+                icon: 'success',
+                timer: 1500,
+                timerProgressBar: true,
+                position: 'top-right'
+            })
+        }
+    }
     return (
         <aside
             className="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark"
@@ -19,24 +53,24 @@ function SidebarAdmin() {
             <div className="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/homeadmin"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">dashboard</i>
                             </div>
                             <span className="nav-link-text ms-1">Dashboard</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+                        <Link to={"/department"} className="nav-link text-white active bg-gradient-primary">
                             <span className="nav-link-text ms-1">Department Management</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+                        <Link to={"/employee"} className="nav-link text-white active bg-gradient-primary">
                             <span className="nav-link-text ms-1">Employee Management</span>
-                        </a>
+                        </Link>
                     </li>
 
 
@@ -47,20 +81,20 @@ function SidebarAdmin() {
                         </h6>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link text-white" href="./profile.html">
+                        <Link className="nav-link text-white" to={"/profile"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">person</i>
                             </div>
                             <span className="nav-link-text ms-1">Profile</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link text-white">
+                        <button className="nav-link text-white bg-dark" onClick={() => handleLogOut()}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">logout</i>
                             </div>
                             <span className="nav-link-text ms-1">Sign Out</span>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>

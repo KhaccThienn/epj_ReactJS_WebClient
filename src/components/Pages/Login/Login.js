@@ -16,7 +16,7 @@ function Login() {
     const userData = useSelector(selectUserData);
     const dispatch = useDispatch();
     const [loginData, setLoginData] = useState([]);
-    const [cookies, setCookie, removeCookie] = useCookies(["user_data", "access_token", "refresh_token"]);
+    const [cookies, setCookie, removeCookie] = useCookies(["user", "access_token", "refresh_token"]);
     const navigate = useNavigate();
 
     const initialValues = {
