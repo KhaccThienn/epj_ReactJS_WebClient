@@ -53,36 +53,36 @@ function SidebarHR() {
             <div className="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/home"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">dashboard</i>
                             </div>
                             <span className="nav-link-text ms-1">Dashboard</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/vacancy"}>
                             <span className="nav-link-text ms-1">Vacancy Management</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/applicant"}>
                             <span className="nav-link-text ms-1">Applicant Management</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
-                            <span className="nav-link-text ms-1">Interview Management</span>
-                        </a>
-                    </li>
-
-                    <li className="nav-item">
-                        <a className="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/applicant_vacancy"}>
                             <span className="nav-link-text ms-1">Attach Applicant to Vacancy</span>
-                        </a>
+                        </Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"Interview"}>
+                            <span className="nav-link-text ms-1">Interview Management</span>
+                        </Link>
                     </li>
 
                     <li className="nav-item mt-3">

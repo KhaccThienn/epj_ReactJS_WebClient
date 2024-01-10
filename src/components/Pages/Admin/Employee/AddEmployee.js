@@ -5,10 +5,6 @@ import * as DepartmentService from "../../../../services/DepartmentService"
 import Swal from 'sweetalert2';
 
 function AddEmployee() {
-    const initData = {
-        Employee_Name: ""
-    }
-
     const initState = {
         Employee_Name: "",
         Username: "",
