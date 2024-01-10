@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { clearUser, selectUserData } from '../../../../redux/reducers/user';
 import { useCookies } from 'react-cookie';
+import { MdLogout, MdOutlineDashboard, MdOutlineGroup, MdOutlineLocalFireDepartment, MdPersonOutline } from "react-icons/md";
 
 function SidebarAdmin() {
     const [reload, setReload] = useState(false);
@@ -55,7 +56,7 @@ function SidebarAdmin() {
                     <li className="nav-item">
                         <Link className="nav-link text-white active bg-gradient-primary" to={"/homeadmin"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">dashboard</i>
+                                <MdOutlineDashboard />
                             </div>
                             <span className="nav-link-text ms-1">Dashboard</span>
                         </Link>
@@ -63,12 +64,18 @@ function SidebarAdmin() {
 
                     <li className="nav-item">
                         <Link to={"/department"} className="nav-link text-white active bg-gradient-primary">
+                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <MdOutlineLocalFireDepartment />
+                            </div>
                             <span className="nav-link-text ms-1">Department Management</span>
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link to={"/employee"} className="nav-link text-white active bg-gradient-primary">
+                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <MdOutlineGroup />
+                            </div>
                             <span className="nav-link-text ms-1">Employee Management</span>
                         </Link>
                     </li>
@@ -83,18 +90,18 @@ function SidebarAdmin() {
                     <li className="nav-item">
                         <Link className="nav-link text-white" to={"/profile"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">person</i>
+                                <MdPersonOutline />
                             </div>
                             <span className="nav-link-text ms-1">Profile</span>
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-link text-white bg-dark" onClick={() => handleLogOut()}>
+                        <Link className="nav-link text-white" onClick={() => handleLogOut()}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">logout</i>
+                                <MdLogout />
                             </div>
                             <span className="nav-link-text ms-1">Sign Out</span>
-                        </button>
+                        </Link>
                     </li>
                 </ul>
             </div>

@@ -79,8 +79,8 @@ function Department() {
             <div className="col-12">
                 <div className='row'>
                     <div className='col-lg-3'>
-                        <Link className='btn btn-outline-secondary' to={"/department/add"}>Add New</Link>
-                        <button className='btn btn-outline-danger' onClick={() => setReload(!reload)}>Fetch...</button>
+                        <Link className='btn btn-outline-secondary mx-1' to={"/department/add"}>Add New</Link>
+                        <button className='btn btn-outline-danger mx-1' onClick={() => setReload(!reload)}>Fetch...</button>
                     </div>
                     <div className='col-lg-4'>
 
@@ -88,8 +88,8 @@ function Department() {
                     <div className='col-lg-5'>
 
                         <div className="input-group input-group-outline align-items-center">
-                            <input type="text" className="form-control rounded-0" name='search' onChange={(e) => setSearchData(e.target.value)} placeholder='Search By Name...' />
-                            <button className='btn btn-outline-danger m-0' onClick={() => handleSubmit()}>Search...</button>
+                            <input type="text" className="form-control mx-1" name='search' onChange={(e) => setSearchData(e.target.value)} placeholder='Search By Name...' />
+                            <button className='btn btn-outline-danger m-0 mx-1 rounded' onClick={() => handleSubmit()}>Search...</button>
                         </div>
                     </div>
                 </div>
@@ -140,8 +140,8 @@ function Department() {
                                                         <span className="text-xs font-weight-bold">{e.updated_Date}</span>
                                                     </td>
                                                     <td className="align-middle">
-                                                        <Link to={`/department/update/${e.departmentId}`} className='btn btn-outline-success rounded-0'>Update</Link>
-                                                        <button onClick={() => handleDelete(e.departmentId)} className='btn btn-outline-danger rounded-0'>Delete</button>
+                                                        <Link to={`/department/update/${e.departmentId}`} className='btn btn-outline-success mx-1'>Update</Link>
+                                                        <button onClick={() => handleDelete(e.departmentId)} className='btn btn-outline-danger mx-1'>Delete</button>
                                                     </td>
                                                 </tr>
                                             )

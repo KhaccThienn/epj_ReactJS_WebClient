@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { object, string } from 'yup';
 import { useFormik } from "formik";
 import { useCookies } from "react-cookie";
+
 import {
     setUser,
     selectUserData,
@@ -109,8 +110,8 @@ function Login() {
                                                     }} name='Password' className="form-control" />
                                             </div>
                                             {formik.errors.Password && <small id="helpId" className="text-danger">{formik.errors.Password}</small>}
-                                            <div className="input-group input-group-outline mb-3">
-                                                <div className="form-check  pl-0 form-check-inline">
+                                            <div className="input-group input-group-outline">
+                                                <div className="form-check p-0 form-check-inline">
                                                     <input className="form-check-input" type="radio" defaultChecked={true} name="Role" id="inlineRadio1" value="0" onChange={
                                                         (e) => {
                                                             handleChange(e);
@@ -135,10 +136,6 @@ function Login() {
                                                     <label className="form-check-label" htmlFor="inlineRadio3">Interview</label>
                                                 </div>
                                             </div>
-                                            <div className="form-check form-switch d-flex align-items-center mb-3">
-                                                <input className="form-check-input" name='remember' type="checkbox" id="rememberMe" />
-                                                <label className="form-check-label mb-0 ms-3" htmlFor="rememberMe">Remember me</label>
-                                            </div>
                                             <div className="text-center">
                                                 <button type="submit" className="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button>
                                             </div>
@@ -153,7 +150,7 @@ function Login() {
                             <div className="row align-items-center justify-content-lg-between">
                                 <div className="col-12 col-md-6 my-auto">
                                     <div className="copyright text-center text-sm text-white text-lg-start">
-                                        © Copyright 2023 From KhaccThienn and teams
+                                        © Copyright 2023 From KhaccThienn's team.
                                     </div>
                                 </div>
                             </div>
