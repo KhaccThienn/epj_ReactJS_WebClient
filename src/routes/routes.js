@@ -21,6 +21,10 @@ import Applicant from "../components/Pages/HR/Appicant/Applicant";
 import AddApplicant from './../components/Pages/HR/Appicant/AddApplicant';
 import UpdateApplicant from "../components/Pages/HR/Appicant/UpdateApplicant";
 import DetailsApplicant from "../components/Pages/HR/Appicant/DetailsApplicant";
+import ListApplicantVacancy from "../components/Pages/HR/Applicant_Vacancy/ListApplicantVacancy";
+import ScheduleInterview from "../components/Pages/HR/Applicant_Vacancy/ScheduleInterview";
+import Interview from "../components/Pages/HR/Interview/Interview";
+import DetailsInterview from "../components/Pages/HR/Interview/DetailsInterview";
 
 export const unLoginRoute = [
     {
@@ -131,7 +135,10 @@ export const AdminRoutes = [
         path: "employee/update/:id",
         component: <AdminLayouts child={<UpdateEmployee />} />,
     },
-
+    {
+        path: "employee/details/:id",
+        component: <AdminLayouts child={<DetailsEmployee />} />,
+    },
     {
         path: "profile",
         component: <AdminLayouts child={<Profile />} />,
@@ -175,6 +182,27 @@ export const HRRoutes = [
     {
         path: "applicant/update/:id",
         component: <HRLayouts child={<UpdateApplicant />} />
+    },
+
+    {
+        path: "applicant_vacancy",
+        component: <HRLayouts child={<ListApplicantVacancy />} />
+    },
+
+
+    {
+        path: "interview/schedule/:id",
+        component: <HRLayouts child={<ScheduleInterview />} />
+    },
+
+    {
+        path: "interview",
+        component: <HRLayouts child={<Interview />} />
+    },
+
+    {
+        path: "interview/details/:id",
+        component: <HRLayouts child={<DetailsInterview />} />
     },
 
 

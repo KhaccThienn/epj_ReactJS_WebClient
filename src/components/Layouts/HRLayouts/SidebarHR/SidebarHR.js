@@ -80,7 +80,7 @@ function SidebarHR() {
                     </li>
 
                     <li className="nav-item">
-                        <Link className="nav-link text-white active bg-gradient-primary" to={"Interview"}>
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/interview"}>
                             <span className="nav-link-text ms-1">Interview Management</span>
                         </Link>
                     </li>

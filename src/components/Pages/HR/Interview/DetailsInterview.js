@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import * as ApplicantService from "../../../../services/ApplicantService"
+import * as InterviewService from "../../../../services/InterviewService"
 
-function DetailsApplicant() {
+function DetailsInterview() {
     const { id } = useParams();
     console.log(id);
 
     const initState = {
-        applicant_Id: "",
-        applicant_Name: "",
-        emailId: "",
-        address: "",
-        phoneNumber: "",
-        gender: true,
-        descriptions: "",
-        experience: "",
-        avatar: ""
+        interviewId: "",
+        interviewDate: "",
+        dateStarted: "",
+        dateEnd: "",
+        employee: {},
+        vacancy: {},
+        applicant: {},
+        note: "",
+        interviewStatuss: "",
+        created_Date: "",
+        updated_Date: ""
     };
     const [apiData, setApiData] = useState(initState);
 
     const fetchApiData = async (id) => {
-        const [data, err] = await ApplicantService.getById(id);
+        const [data, err] = await InterviewService.getById(id);
         if (err) {
             console.log(err);
         }
@@ -39,7 +41,7 @@ function DetailsApplicant() {
                 <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div className="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                         <h6 className="text-white text-capitalize ps-3">
-                            Vacancy Details
+                            Interview Details
                         </h6>
                     </div>
                 </div>
@@ -50,12 +52,12 @@ function DetailsApplicant() {
                             <tr className='p-3'>
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Applicant Number:
+                                        Interview Id:
                                     </span>
                                 </th>
                                 <td>
                                     <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.applicant_Id}
+                                        {apiData.interviewId}
                                     </span>
                                 </td>
                             </tr>
@@ -63,12 +65,13 @@ function DetailsApplicant() {
                             <tr className='p-3'>
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Applicant Avatar:
+                                        Interview Date:
                                     </span>
                                 </th>
                                 <td>
-                                    <img src={apiData.avatar}
-                                        className="card-img me-2" alt="spotify" />
+                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
+                                        {apiData.interviewDate}
+                                    </span>
                                 </td>
                             </tr>
 
@@ -76,12 +79,12 @@ function DetailsApplicant() {
                             <tr >
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Applicant Name
+                                        Date Started:
                                     </span>
                                 </th>
                                 <td>
                                     <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.applicant_Name}
+                                        {apiData.dateStarted}
                                     </span>
                                 </td>
                             </tr>
@@ -89,13 +92,12 @@ function DetailsApplicant() {
                             <tr>
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Email Id:
-
+                                        Date End:
                                     </span>
                                 </th>
                                 <td>
                                     <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.emailId}
+                                        {apiData.dateEnd}
                                     </span>
                                 </td>
                             </tr>
@@ -103,12 +105,12 @@ function DetailsApplicant() {
                             <tr>
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Address:
+                                        Employee:
                                     </span>
                                 </th>
                                 <td>
                                     <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.address}
+                                        {apiData.employee.employee_Name}
                                     </span>
                                 </td>
                             </tr>
@@ -116,12 +118,38 @@ function DetailsApplicant() {
                             <tr>
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Phone Number:
+                                        Vacancy:
                                     </span>
                                 </th>
                                 <td>
                                     <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.phoneNumber}
+                                        {apiData.vacancy.vacancy_Title}
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
+                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
+                                        Applicant:
+                                    </span>
+                                </th>
+                                <td>
+                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
+                                        {apiData.applicant.applicant_Name}
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
+                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
+                                        Note:
+                                    </span>
+                                </th>
+                                <td>
+                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
+                                        {apiData.note}
                                     </span>
                                 </td>
                             </tr>
@@ -134,75 +162,8 @@ function DetailsApplicant() {
                                 </th>
                                 <td>
                                     <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.status === 0 && "Not In Process"}
-                                        {apiData.status === 1 && "In Process"}
-                                        {apiData.status === 2 && "Hired"}
-                                        {apiData.status === 3 && "Banned"}
-                                    </span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
-                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Number Of Jobs:
-                                    </span>
-                                </th>
-                                <td>
-                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.numberOfJobs}
-                                    </span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
-                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Required Skill:
-                                    </span>
-                                </th>
-                                <td>
-                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.requiredSkill}
-                                    </span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
-                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Experience:
-                                    </span>
-                                </th>
-                                <td>
-                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.experience}
-                                    </span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
-                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Location:
-                                    </span>
-                                </th>
-                                <td>
-                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.location}
-                                    </span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
-                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Descriptions:
-                                    </span>
-                                </th>
-                                <td>
-                                    <span className="text-xs font-weight-bold mb-0" style={{ padding: "20px" }}>
-                                        {apiData.descriptions}
+                                        {apiData.interviewStatuss === 0 && "SELECTED"}
+                                        {apiData.interviewStatuss === 1 && "REJECTED"}
                                     </span>
                                 </td>
                             </tr>
@@ -241,4 +202,4 @@ function DetailsApplicant() {
     )
 }
 
-export default DetailsApplicant
+export default DetailsInterview
