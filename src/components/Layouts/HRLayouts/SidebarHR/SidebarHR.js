@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearUser, selectUserData } from '../../../../redux/reducers/user';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { MdAttachFile, MdBadge, MdLogout, MdOutlineDashboard, MdOutlineInterpreterMode, MdPersonAdd, MdPersonOutline } from 'react-icons/md';
 
 function SidebarHR() {
     const [reload, setReload] = useState(false);
@@ -42,10 +43,10 @@ function SidebarHR() {
             <div className="sidenav-header">
                 <i className="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                     aria-hidden="true" id="iconSidenav"></i>
-                <a className="navbar-brand m-0">
+                <Link to="" className="navbar-brand m-0">
                     <img src="../assets/img/logo-ct.png" className="navbar-brand-img h-100" alt="main_logo" />
-                    <span className="ms-1 font-weight-bold text-white">Control Panel System</span>
-                </a>
+                    <span className="ms-1 font-weight-bold text-white">HR Management System</span>
+                </Link>
             </div>
 
             <hr className="horizontal light mt-0 mb-2" />
@@ -55,7 +56,7 @@ function SidebarHR() {
                     <li className="nav-item">
                         <Link className="nav-link text-white active bg-gradient-primary" to={"/home"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">dashboard</i>
+                                <MdOutlineDashboard />
                             </div>
                             <span className="nav-link-text ms-1">Dashboard</span>
                         </Link>
@@ -63,24 +64,36 @@ function SidebarHR() {
 
                     <li className="nav-item">
                         <Link className="nav-link text-white active bg-gradient-primary" to={"/vacancy"}>
+                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <MdBadge />
+                            </div>
                             <span className="nav-link-text ms-1">Vacancy Management</span>
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link text-white active bg-gradient-primary" to={"/applicant"}>
+                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <MdPersonAdd />
+                            </div>
                             <span className="nav-link-text ms-1">Applicant Management</span>
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link text-white active bg-gradient-primary" to={"/applicant_vacancy"}>
+                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <MdAttachFile />
+                            </div>
                             <span className="nav-link-text ms-1">Attach Applicant to Vacancy</span>
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link text-white active bg-gradient-primary" to={"Interview"}>
+                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <MdOutlineInterpreterMode />
+                            </div>
                             <span className="nav-link-text ms-1">Interview Management</span>
                         </Link>
                     </li>
@@ -93,18 +106,18 @@ function SidebarHR() {
                     <li className="nav-item">
                         <Link className="nav-link text-white" to={"/profile"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">person</i>
+                                <MdPersonOutline />
                             </div>
                             <span className="nav-link-text ms-1">Profile</span>
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-link text-white bg-dark" onClick={() => handleLogOut()}>
+                        <Link className="nav-link text-white" onClick={() => handleLogOut()}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">logout</i>
+                                <MdLogout />
                             </div>
                             <span className="nav-link-text ms-1">Sign Out</span>
-                        </button>
+                        </Link>
                     </li>
                 </ul>
             </div>
