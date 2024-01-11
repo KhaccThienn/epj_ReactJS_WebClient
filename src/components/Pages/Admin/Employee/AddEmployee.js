@@ -161,7 +161,7 @@ function AddEmployee() {
 
                     <label class="form-label">Employee Role ?</label>
                     <div className="input-group input-group-outline mb-3">
-                        <div className="form-check  pl-0 form-check-inline">
+                        <div className="form-check  p-0 form-check-inline">
                             <input className="form-check-input" type="radio" defaultChecked={true} name="Role" id="inlineRadio1" value="0" onChange={
                                 (e) => {
                                     handleChange(e);
