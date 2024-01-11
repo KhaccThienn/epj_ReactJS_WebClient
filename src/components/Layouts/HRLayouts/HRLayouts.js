@@ -7,9 +7,9 @@ function HRLayouts({ child }) {
     return (
         <>
             <SidebarHR />
-            <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+            <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
                 <Header />
-                <div class="container-fluid py-4">
+                <div className="container-fluid py-4">
                     {child}
 
                     <Footer />
