@@ -74,8 +74,8 @@ function Applicant() {
             <div className="col-12">
                 <div className='row'>
                     <div className='col-lg-3'>
-                        <Link className='btn btn-outline-secondary' to={"/applicant/add"}>Add New</Link>
-                        <button className='btn btn-outline-danger' onClick={() => setReload(!reload)}>Fetch...</button>
+                        <Link className='btn btn-outline-secondary mx-1' to={"/applicant/add"}>Add New</Link>
+                        <button className='btn btn-outline-danger mx-1' onClick={() => setReload(!reload)}>Fetch...</button>
                     </div>
                     <div className='col-lg-4'>
 
@@ -83,8 +83,8 @@ function Applicant() {
                     <div className='col-lg-5'>
 
                         <div className="input-group input-group-outline align-items-center">
-                            <input type="text" className="form-control " name='search' onChange={(e) => setSearchData(e.target.value)} placeholder='Search By Applicant Number...' />
-                            <button className='btn btn-outline-danger m-0' onClick={() => handleSubmit()}>Search...</button>
+                            <input type="text" className="form-control mx-1 " name='search' onChange={(e) => setSearchData(e.target.value)} placeholder='Search By Applicant Number...' />
+                            <button className='btn btn-outline-danger m-0 mx-1 rounded' onClick={() => handleSubmit()}>Search...</button>
                         </div>
                     </div>
                 </div>
