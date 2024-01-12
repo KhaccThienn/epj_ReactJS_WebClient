@@ -90,7 +90,7 @@ function SidebarHR() {
                     </li>
 
                     <li className="nav-item">
-                        <Link className="nav-link text-white active bg-gradient-primary" to={"Interview"}>
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/interview"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <MdOutlineInterpreterMode />
                             </div>

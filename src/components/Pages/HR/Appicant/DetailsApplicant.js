@@ -68,7 +68,7 @@ function DetailsApplicant() {
                                 </th>
                                 <td>
                                     <img src={apiData.avatar}
-                                        className="card-img me-2" alt="spotify" />
+                                        className="" alt="spotify" />
                                 </td>
                             </tr>
 
