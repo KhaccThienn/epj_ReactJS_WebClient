@@ -15,7 +15,7 @@ function SidebarHR() {
 
     const handleLogOut = async () => {
         const choose = await Swal.fire({
-            title: "Do You Want To Log Out ?",
+            title: "Do You Want To Log Out?",
             showDenyButton: true,
             confirmButtonText: "Yes",
             denyButtonText: "No",
