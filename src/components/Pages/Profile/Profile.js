@@ -31,63 +31,6 @@ function Profile() {
                         <div class="col-12 col-xl-6">
                             <div class="card card-plain h-100">
                                 <div class="card-header pb-0 p-3">
-                                    <h6 class="mb-0">Platform Settings</h6>
-                                </div>
-                                <div class="card-body p-3">
-                                    <h6 class="text-uppercase text-body text-xs font-weight-bolder">Account</h6>
-                                    <ul class="list-group">
-                                        <li class="list-group-item border-0 px-0">
-                                            <div class="form-check form-switch ps-0">
-                                                <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault" checked />
-                                                <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
-                                                    for="flexSwitchCheckDefault">Email me when someone follows me</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item border-0 px-0">
-                                            <div class="form-check form-switch ps-0">
-                                                <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault1" />
-                                                <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
-                                                    for="flexSwitchCheckDefault1">Email me when someone answers on my post</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item border-0 px-0">
-                                            <div class="form-check form-switch ps-0">
-                                                <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault2" checked />
-                                                <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
-                                                    for="flexSwitchCheckDefault2">Email me when someone mentions me</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <h6 class="text-uppercase text-body text-xs font-weight-bolder mt-4">Application</h6>
-                                    <ul class="list-group">
-                                        <li class="list-group-item border-0 px-0">
-                                            <div class="form-check form-switch ps-0">
-                                                <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault3" />
-                                                <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
-                                                    for="flexSwitchCheckDefault3">New launches and projects</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item border-0 px-0">
-                                            <div class="form-check form-switch ps-0">
-                                                <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault4" checked />
-                                                <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
-                                                    for="flexSwitchCheckDefault4">Monthly product updates</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item border-0 px-0 pb-0">
-                                            <div class="form-check form-switch ps-0">
-                                                <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault5" />
-                                                <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
-                                                    for="flexSwitchCheckDefault5">Subscribe to newsletter</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-6">
-                            <div class="card card-plain h-100">
-                                <div class="card-header pb-0 p-3">
                                     <div class="row">
                                         <div class="col-md-8 d-flex align-items-center">
                                             <h6 class="mb-0">Profile Information</h6>
@@ -102,38 +45,47 @@ function Profile() {
                                 </div>
                                 <div class="card-body p-3">
                                     <p class="text-sm">
-                                        Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult
-                                        paths, choose the one more painful in the short term (pain avoidance is creating an illusion of
-                                        equality).
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                     </p>
-                                    <hr class="horizontal gray-light my-4" />
                                     <ul class="list-group">
                                         <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong>
-                                            &nbsp; Alec M. Thompson</li>
-                                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Mobile:</strong> &nbsp;
-                                            (44) 123 1234 123</li>
+                                            &nbsp; $employeeName</li>
+                                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Gender:</strong> &nbsp;
+                                            $gender</li>
                                         <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp;
-                                            alecthompson@mail.com</li>
-                                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Location:</strong>
-                                            &nbsp; USA</li>
-                                        <li class="list-group-item border-0 ps-0 pb-0">
-                                            <strong class="text-dark text-sm">Social:</strong> &nbsp;
-                                            <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
-                                                <i class="fab fa-facebook fa-lg"></i>
-                                            </a>
-                                            <a class="btn btn-twitter btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
-                                                <i class="fab fa-twitter fa-lg"></i>
-                                            </a>
-                                            <a class="btn btn-instagram btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
-                                                <i class="fab fa-instagram fa-lg"></i>
-                                            </a>
-                                        </li>
+                                            $emailId</li>
+                                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Department:</strong>
+                                            &nbsp; $departmentName</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
-
+                        <div class="col-12 col-xl-6">
+                            <div class="card card-plain h-100">
+                                <div class="card-header pb-0 p-3">
+                                    <h6 class="mb-0">Change Password</h6>
+                                </div>
+                                <div class="card-body p-3">
+                                    <form class="form" action='' method='post'>
+                                        <div class="form-group">
+                                            <label for="inputPasswordOld">Current Password</label>
+                                            <input type="password" class="form-control border px-3" id="inputPasswordOld" required="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPasswordNew">New Password</label>
+                                            <input type="password" class="form-control border px-3" id="inputPasswordNew" required="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPasswordNewVerify">Confirm new password</label>
+                                            <input type="password" class="form-control border px-3" id="inputPasswordNewVerify" required="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-outline-primary float-right my-3">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
