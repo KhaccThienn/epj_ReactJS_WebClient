@@ -21,87 +21,15 @@ import Applicant from "../components/Pages/HR/Appicant/Applicant";
 import AddApplicant from './../components/Pages/HR/Appicant/AddApplicant';
 import UpdateApplicant from "../components/Pages/HR/Appicant/UpdateApplicant";
 import DetailsApplicant from "../components/Pages/HR/Appicant/DetailsApplicant";
+import ListApplicantVacancy from "../components/Pages/HR/Applicant_Vacancy/ListApplicantVacancy";
+import ScheduleInterview from "../components/Pages/HR/Applicant_Vacancy/ScheduleInterview";
+import Interview from "../components/Pages/HR/Interview/Interview";
+import DetailsInterview from "../components/Pages/HR/Interview/DetailsInterview";
 
 export const unLoginRoute = [
     {
         path: "/",
         component: <Login />,
-    },
-    {
-        path: "homeadmin",
-        component: <AdminLayouts child={<HomeAdmin />} />,
-    },
-
-    {
-        path: "department",
-        component: <AdminLayouts child={<Department />} />,
-    },
-    {
-        path: "department/add",
-        component: <AdminLayouts child={<AddDepartment />} />,
-    },
-    {
-        path: "department/update/:id",
-        component: <AdminLayouts child={<UpdateDepartment />} />,
-    },
-
-    {
-        path: "employee",
-        component: <AdminLayouts child={<ListEmployee />} />,
-    },
-    {
-        path: "employee/add",
-        component: <AdminLayouts child={<AddEmployee />} />,
-    },
-    {
-        path: "employee/update/:id",
-        component: <AdminLayouts child={<UpdateEmployee />} />,
-    },
-
-    {
-        path: "profile",
-        component: <HRLayouts child={<Profile />} />,
-    },
-
-    {
-        path: "home",
-        component: <HRLayouts child={<HomeHR />} />,
-    },
-
-    {
-        path: "homeinterview",
-        component: <InterviewLayouts child={<HomeInterview />} />,
-    },
-
-    {
-        path: "employee",
-        component: <AdminLayouts child={<ListEmployee />} />,
-    },
-    {
-        path: "employee/add",
-        component: <AdminLayouts child={<AddEmployee />} />,
-    },
-    {
-        path: "employee/update/:id",
-        component: <AdminLayouts child={<UpdateEmployee />} />,
-    },
-
-    {
-        path: "employee/details/:id",
-        component: <AdminLayouts child={<DetailsEmployee />} />,
-    },
-
-    {
-        path: "vacancy",
-        component: <HRLayouts child={<Vacancy />} />
-    },
-    {
-        path: "department",
-        component: <AdminLayouts child={<Department />} />,
-    },
-    {
-        path: "applicant",
-        component: <HRLayouts child={<Applicant />} />
     },
 ];
 
@@ -135,7 +63,10 @@ export const AdminRoutes = [
         path: "employee/update/:id",
         component: <AdminLayouts child={<UpdateEmployee />} />,
     },
-
+    {
+        path: "employee/details/:id",
+        component: <AdminLayouts child={<DetailsEmployee />} />,
+    },
     {
         path: "profile",
         component: <AdminLayouts child={<Profile />} />,
@@ -179,6 +110,27 @@ export const HRRoutes = [
     {
         path: "applicant/update/:id",
         component: <HRLayouts child={<UpdateApplicant />} />
+    },
+
+    {
+        path: "applicant_vacancy",
+        component: <HRLayouts child={<ListApplicantVacancy />} />
+    },
+
+
+    {
+        path: "interview/schedule/:id",
+        component: <HRLayouts child={<ScheduleInterview />} />
+    },
+
+    {
+        path: "interview",
+        component: <HRLayouts child={<Interview />} />
+    },
+
+    {
+        path: "interview/details/:id",
+        component: <HRLayouts child={<DetailsInterview />} />
     },
 
 

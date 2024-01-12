@@ -14,7 +14,9 @@ function UpdateApplicant() {
         gender: true,
         descriptions: "",
         experience: "",
-        avatar: ""
+        avatar: "",
+        status: "",
+        created_Date: ""
     };
 
     const initData = {
@@ -25,6 +27,7 @@ function UpdateApplicant() {
         Gender: true,
         Descriptions: "",
         Experience: "",
+        Status: 0,
         ImageFile: {}
     };
 
@@ -51,6 +54,7 @@ function UpdateApplicant() {
         }
         if (data) {
             setApiData(data);
+            console.log(data);
         }
     }
 
@@ -67,6 +71,9 @@ function UpdateApplicant() {
         formData.append("Descriptions", postData.Descriptions ? postData.Descriptions : apiData.descriptions);
         formData.append("Address", postData.Address ? postData.Address : apiData.address);
         formData.append("OldImage", apiData.avatar);
+        formData.append("Status", postData.Status ? postData.Status : apiData.status);
+        formData.append("Status", postData.Status ? postData.Status : apiData.status);
+        formData.append("Created_Date", apiData.created_Date);
 
         const [result, error] = await ApplicantService.updatee(id, formData);
         if (result) {
@@ -180,6 +187,16 @@ function UpdateApplicant() {
                             (e) => {
                                 handleChange(e)
                             }} />
+                    </div>
+
+                    <label class="form-label">Status</label>
+                    <div class="input-group input-group-outline my-3">
+                        <select name='Status' className='form-control form-select' onChange={handleChange}>
+                            <option value={0} selected={apiData.status === 0}>NOT IN PROCESS</option>
+                            <option value={1} selected={apiData.status === 1}>IN PROCESS</option>
+                            <option value={2} selected={apiData.status === 2}>HIRED</option>
+                            <option value={3} selected={apiData.status === 3}>BANNED</option>
+                        </select>
                     </div>
 
                     <div class="text-center">
