@@ -1,36 +1,79 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
+import * as EmployeeService from "../../../../services/EmployeeService"
+import Swal from 'sweetalert2';;
 
 function ChangePassword() {
+    const { id } = useParams()
+    const initDataPassword = {
+        Employee_Number: id,
+        OldPassword: "",
+        NewPassword: "",
+        ConfirmPassword: "",
+    }
+    const [postDataa, setPostDataa] = useState(initDataPassword);
+    const navigate = useNavigate();
+    const handleChange = async (e) => {
+        const { name, value } = await e.target;
+        setPostDataa({ ...postDataa, [name]: value });
+    };
+    const handleUpdatePassword = async () => {
+        console.log(postDataa);
+        const [data, error] = await EmployeeService.updatePassword(id, postDataa);
+        if (error) {
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: error.response.data.statusMessage,
+                showConfirmButton: false,
+                timer: 1500
+            });
+            console.log(error);
+        }
+        if (data) {
+            console.log(data);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: data.statusMessage,
+                showConfirmButton: false,
+                timer: 1500
+            });
+            navigate("/employee")
+        }
+    }
     return (
         <>
             <div class="row">
                 <div class="col-lg-12 col-md-8 col-12 mx-auto">
-                    <div class="col-12 col-xl-6">
-                        <div class="card card-plain h-100">
-                            <div class="card-header pb-0 p-3">
-                                <h6 class="mb-0">Change Password</h6>
-                            </div>
-                            <div class="card-body p-3">
-                                <form class="form" action='' method='post'>
-                                    <div class="form-group">
-                                        <label for="inputPasswordOld">Current Password</label>
-                                        <input type="password" class="form-control border px-3" id="inputPasswordOld" required="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPasswordNew">New Password</label>
-                                        <input type="password" class="form-control border px-3" id="inputPasswordNew" required="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPasswordNewVerify">Confirm new password</label>
-                                        <input type="password" class="form-control border px-3" id="inputPasswordNewVerify" required="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-outline-primary float-right my-3">Save</button>
-                                    </div>
-                                </form>
-                            </div>
+                    <form  class="text-start" method="POST">
+                        <label class="form-label">Old Password</label>
+                        <div class="input-group input-group-outline my-3">
+                            <input type="password" class="form-control" name='OldPassword' onChange={
+                                (e) => {
+                                    handleChange(e)
+                                }} />
                         </div>
-                    </div>
+
+                        <label class="form-label">New Password</label>
+                        <div class="input-group input-group-outline my-3">
+                            <input type="password" class="form-control" name='NewPassword' onChange={
+                                (e) => {
+                                    handleChange(e)
+                                }} />
+                        </div>
+
+                        <label class="form-label">Confirm Password</label>
+                        <div class="input-group input-group-outline my-3">
+                            <input type="password" class="form-control" name='ConfirmPassword' onChange={
+                                (e) => {
+                                    handleChange(e)
+                                }} />
+                        </div>
+                        <div class="text-center">
+                            <button type="button" onClick={() => handleUpdatePassword()} class="btn bg-gradient-primary w-100 my-4 mb-2">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </>

@@ -6,7 +6,10 @@ import { useSelector } from 'react-redux';
 import { selectUserData } from '../../../redux/reducers/user';
 
 function Profile() {
+    const userData = useSelector(selectUserData);
+
     const initDataPassword = {
+        Employee_Number: userData.user.employee_Number,
         OldPassword: "",
         NewPassword: "",
         ConfirmPassword: "",
@@ -38,7 +41,6 @@ function Profile() {
         ImageFile: {}
     };
 
-    const userData = useSelector(selectUserData);
     const [postDataa, setPostDataa] = useState(initDataPassword);
     const [reload, setReload] = useState(false);
     const [postImage, setPostImage] = useState();
@@ -76,6 +78,7 @@ function Profile() {
     };
 
     const handleUpdatePassword = async () => {
+        console.log(postDataa);
         const [data, error] = await EmployeeService.updatePassword(userData.user.employee_Number, postDataa);
         if (error) {
             Swal.fire({
@@ -322,6 +325,7 @@ function Profile() {
                                 </div>
                                 <div class="card-body p-3">
                                     <form class="form" action='' method='post'>
+                                        <input type="hidden" name="Employee_Number" />
                                         <div class="form-group">
                                             <label for="inputPasswordOld">Current Password</label>
                                             <input type="password" onChange={(e) => handleChange(e)} name='OldPassword' class="form-control border px-3" id="inputPasswordOld" required="" />

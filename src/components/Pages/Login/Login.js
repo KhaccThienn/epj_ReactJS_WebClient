@@ -113,7 +113,7 @@ function Login() {
                                             {formik.errors.Password && <small id="helpId" className="text-danger">{formik.errors.Password}</small>}
                                             <div className="input-group input-group-outline">
                                                 <div className="form-check p-0 form-check-inline">
-                                                    <input className="form-check-input" type="radio" defaultChecked={true} name="Role" id="inlineRadio1" value="0" onChange={
+                                                    <input className="form-check-input" type="radio" name="Role" id="inlineRadio1" value={0} onChange={
                                                         (e) => {
                                                             handleChange(e);
                                                             formik.handleChange(e)
@@ -121,7 +121,7 @@ function Login() {
                                                     <label className="form-check-label" htmlFor="inlineRadio1">Admin</label>
                                                 </div>
                                                 <div className="form-check form-check-inline">
-                                                    <input className="form-check-input" type="radio" name="Role" id="inlineRadio2" value="1" onChange={
+                                                    <input className="form-check-input" type="radio" name="Role" id="inlineRadio2" value={1} onChange={
                                                         (e) => {
                                                             handleChange(e);
                                                             formik.handleChange(e)
@@ -129,7 +129,7 @@ function Login() {
                                                     <label className="form-check-label" htmlFor="inlineRadio2">HR</label>
                                                 </div>
                                                 <div className="form-check form-check-inline">
-                                                    <input className="form-check-input" type="radio" name="Role" id="inlineRadio3" value="2" onChange={
+                                                    <input className="form-check-input" type="radio" name="Role" id="inlineRadio3" value={2} onChange={
                                                         (e) => {
                                                             handleChange(e);
                                                             formik.handleChange(e)

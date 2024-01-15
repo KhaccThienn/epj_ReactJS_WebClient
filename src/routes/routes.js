@@ -27,6 +27,7 @@ import Interview from "../components/Pages/HR/Interview/Interview";
 import DetailsInterview from "../components/Pages/HR/Interview/DetailsInterview";
 import ListInterview from "../components/Pages/Interviews/Interview/ListInterview";
 import InterviewDetails from "../components/Pages/Interviews/Interview/InterviewDetails";
+import ChangePassword from "../components/Pages/Admin/Employee/ChangePassword";
 
 export const unLoginRoute = [
     {
@@ -71,7 +72,7 @@ export const AdminRoutes = [
     },
     {
         path: "employee/change_password/:id",
-        component: <AdminLayouts child={<DetailsEmployee />} />,
+        component: <AdminLayouts child={<ChangePassword />} />,
     },
     {
         path: "profile",
