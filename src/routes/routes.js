@@ -29,9 +29,73 @@ import ListInterview from "../components/Pages/Interviews/Interview/ListIntervie
 import InterviewDetails from "../components/Pages/Interviews/Interview/InterviewDetails";
 
 export const unLoginRoute = [
+    // {
+    //     path: "/",
+    //     component: <Login />,
+    // },
     {
         path: "/",
-        component: <Login />,
+        component: <HRLayouts child={<HomeHR />} />,
+    },
+    {
+        path: "vacancy",
+        component: <HRLayouts child={<Vacancy />} />
+    },
+    {
+        path: "vacancy/add",
+        component: <HRLayouts child={<AddVacancy />} />
+    },
+    {
+        path: "vacancy/details/:id",
+        component: <HRLayouts child={<VacancyDetails />} />
+    },
+    {
+        path: "vacancy/update/:id",
+        component: <HRLayouts child={<UpdateVacancy />} />
+    },
+
+    {
+        path: "applicant",
+        component: <HRLayouts child={<Applicant />} />
+    },
+    {
+        path: "applicant/add",
+        component: <HRLayouts child={<AddApplicant />} />
+    },
+    {
+        path: "applicant/details/:id",
+        component: <HRLayouts child={<DetailsApplicant />} />
+    },
+    {
+        path: "applicant/update/:id",
+        component: <HRLayouts child={<UpdateApplicant />} />
+    },
+
+    {
+        path: "applicant_vacancy",
+        component: <HRLayouts child={<ListApplicantVacancy />} />
+    },
+
+
+    {
+        path: "interview/schedule/:id",
+        component: <HRLayouts child={<ScheduleInterview />} />
+    },
+
+    {
+        path: "interview",
+        component: <HRLayouts child={<Interview />} />
+    },
+
+    {
+        path: "interview/details/:id",
+        component: <HRLayouts child={<DetailsInterview />} />
+    },
+
+
+    {
+        path: "profile",
+        component: <HRLayouts child={<Profile />} />,
     },
 ];
 
@@ -67,6 +131,10 @@ export const AdminRoutes = [
     },
     {
         path: "employee/details/:id",
+        component: <AdminLayouts child={<DetailsEmployee />} />,
+    },
+    {
+        path: "employee/change_password/:id",
         component: <AdminLayouts child={<DetailsEmployee />} />,
     },
     {

@@ -166,6 +166,7 @@ function ListEmployee() {
                                                     </td>
                                                     <td className="align-middle">
                                                         <Link to={`/employee/details/${e.employee_Number}`} className='btn btn-outline-secondary mx-1'>Details</Link>
+                                                        <Link to={`/employee/change_password/${e.employee_Number}`} className='btn btn-outline-primary mx-1'>Change password</Link>
                                                         <Link to={`/employee/update/${e.employee_Number}`} className='btn btn-outline-success mx-1'>Update</Link>
                                                         <button onClick={() => handleDelete(e.employee_Number)} className='btn btn-outline-danger mx-1'>Delete</button>
                                                     </td>
