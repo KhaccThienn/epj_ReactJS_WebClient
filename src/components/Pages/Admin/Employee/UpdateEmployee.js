@@ -110,8 +110,6 @@ function UpdateEmployee() {
                 timer: 1500
             });
             console.log(error);
-
-
         }
     };
 

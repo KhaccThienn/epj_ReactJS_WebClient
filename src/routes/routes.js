@@ -25,6 +25,8 @@ import ListApplicantVacancy from "../components/Pages/HR/Applicant_Vacancy/ListA
 import ScheduleInterview from "../components/Pages/HR/Applicant_Vacancy/ScheduleInterview";
 import Interview from "../components/Pages/HR/Interview/Interview";
 import DetailsInterview from "../components/Pages/HR/Interview/DetailsInterview";
+import ListInterview from "../components/Pages/Interviews/Interview/ListInterview";
+import InterviewDetails from "../components/Pages/Interviews/Interview/InterviewDetails";
 
 export const unLoginRoute = [
     {
@@ -144,5 +146,13 @@ export const InterviewRoutes = [
     {
         path: "/",
         component: <InterviewLayouts child={<HomeInterview />} />,
+    },
+    {
+        path: "interview",
+        component: <InterviewLayouts child={<ListInterview />} />
+    },
+    {
+        path: "interview/details/:id",
+        component: <InterviewLayouts child={<InterviewDetails />} />
     },
 ];

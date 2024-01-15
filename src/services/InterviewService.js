@@ -29,6 +29,15 @@ export const getAllByName = async (name) => {
     }
 };
 
+export const getAllById = async (id) => {
+    try {
+        const res = await http.get(`${urlAPI}/api/Interview/byUserId/${id}`, config);
+        return [res, null];
+    } catch (error) {
+        return [null, error];
+    }
+}
+
 export const post = async (data) => {
     try {
         const res = await http.post(`${urlAPI}/api/Interview`, data, config);
@@ -46,6 +55,16 @@ export const updatee = async (id, data) => {
         return [null, error];
     }
 };
+
+export const updateeStatus = async (id, status) => {
+    try {
+        const res = await http.put(`${urlAPI}/api/Interview/updateStatus/${id}/${status}`, config);
+        return [res, null];
+    } catch (error) {
+        return [null, error];
+    }
+};
+
 
 export const getById = async (id) => {
     try {
