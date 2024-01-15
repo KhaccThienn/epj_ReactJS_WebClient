@@ -52,7 +52,7 @@ function SidebarInterview() {
             <div className="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link text-white active bg-gradient-primary" to={"/"}>
+                        <Link className="nav-link text-white active bg-gradient-primary" to={"/home"}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">dashboard</i>
                             </div>

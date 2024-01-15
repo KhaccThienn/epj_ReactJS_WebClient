@@ -10,6 +10,14 @@ const config = {
     }
 };
 
+const configUpdate = {
+    headers: {
+        "Access-Control-Allow-Origin": "https://localhost:7144",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        'Content-Type': 'application/json'
+    }
+};
+
 export const getAll = async () => {
     try {
         const res = await http.get(`${urlAPI}/api/Employee`, config);
@@ -41,6 +49,15 @@ export const post = async (data) => {
 export const updatee = async (id, data) => {
     try {
         const res = await http.put(`${urlAPI}/api/Employee/${id}`, data, config);
+        return [res, null];
+    } catch (error) {
+        return [null, error];
+    }
+};
+
+export const updatePassword = async (id, data) => {
+    try {
+        const res = await http.put(`${urlAPI}/api/Employee/ChangePassword/${id}`, data, configUpdate);
         return [res, null];
     } catch (error) {
         return [null, error];

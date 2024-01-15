@@ -29,79 +29,15 @@ import ListInterview from "../components/Pages/Interviews/Interview/ListIntervie
 import InterviewDetails from "../components/Pages/Interviews/Interview/InterviewDetails";
 
 export const unLoginRoute = [
-    // {
-    //     path: "/",
-    //     component: <Login />,
-    // },
     {
         path: "/",
-        component: <HRLayouts child={<HomeHR />} />,
-    },
-    {
-        path: "vacancy",
-        component: <HRLayouts child={<Vacancy />} />
-    },
-    {
-        path: "vacancy/add",
-        component: <HRLayouts child={<AddVacancy />} />
-    },
-    {
-        path: "vacancy/details/:id",
-        component: <HRLayouts child={<VacancyDetails />} />
-    },
-    {
-        path: "vacancy/update/:id",
-        component: <HRLayouts child={<UpdateVacancy />} />
-    },
-
-    {
-        path: "applicant",
-        component: <HRLayouts child={<Applicant />} />
-    },
-    {
-        path: "applicant/add",
-        component: <HRLayouts child={<AddApplicant />} />
-    },
-    {
-        path: "applicant/details/:id",
-        component: <HRLayouts child={<DetailsApplicant />} />
-    },
-    {
-        path: "applicant/update/:id",
-        component: <HRLayouts child={<UpdateApplicant />} />
-    },
-
-    {
-        path: "applicant_vacancy",
-        component: <HRLayouts child={<ListApplicantVacancy />} />
-    },
-
-
-    {
-        path: "interview/schedule/:id",
-        component: <HRLayouts child={<ScheduleInterview />} />
-    },
-
-    {
-        path: "interview",
-        component: <HRLayouts child={<Interview />} />
-    },
-
-    {
-        path: "interview/details/:id",
-        component: <HRLayouts child={<DetailsInterview />} />
-    },
-
-
-    {
-        path: "profile",
-        component: <HRLayouts child={<Profile />} />,
+        component: <Login />,
     },
 ];
 
 export const AdminRoutes = [
     {
-        path: "/",
+        path: "/home",
         component: <AdminLayouts child={<HomeAdmin />} />,
     },
     {
@@ -145,7 +81,7 @@ export const AdminRoutes = [
 
 export const HRRoutes = [
     {
-        path: "/",
+        path: "/home",
         component: <HRLayouts child={<HomeHR />} />,
     },
     {
@@ -212,7 +148,7 @@ export const HRRoutes = [
 
 export const InterviewRoutes = [
     {
-        path: "/",
+        path: "/home",
         component: <InterviewLayouts child={<HomeInterview />} />,
     },
     {
@@ -222,5 +158,10 @@ export const InterviewRoutes = [
     {
         path: "interview/details/:id",
         component: <InterviewLayouts child={<InterviewDetails />} />
+    },
+
+    {
+        path: "profile",
+        component: <InterviewLayouts child={<Profile />} />,
     },
 ];

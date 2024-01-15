@@ -55,6 +55,7 @@ function Login() {
 
             }
             if (data) {
+                console.log(data);
                 localStorage.setItem("access_token", data.fullStatus.token);
                 setCookie("access_token", data.fullStatus.token);
                 setCookie("user", data.fullStatus.userData);
@@ -66,7 +67,7 @@ function Login() {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate("/");
+                navigate("/home");
                 console.log(data);
             }
         }
