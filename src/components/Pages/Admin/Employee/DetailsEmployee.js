@@ -47,6 +47,20 @@ function DetailsEmployee() {
                     <div className="table-responsive">
                         <table className="table align-items-center justify-content-center mb-0 table-bordered ">
 
+
+
+                            <tr className='p-3'>
+                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
+                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
+                                        Employee Avatar:
+                                    </span>
+                                </th>
+                                <td>
+                                    <img src={data.avatar}
+                                        className="" alt="spotify" height="400px" />
+                                </td>
+                            </tr>
+
                             <tr className='p-3'>
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
@@ -59,20 +73,6 @@ function DetailsEmployee() {
                                     </span>
                                 </td>
                             </tr>
-
-                            <tr className='p-3'>
-                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
-                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Employee Avatar:
-                                    </span>
-                                </th>
-                                <td>
-                                    <img src={data.avatar}
-                                        className="card-img" alt="spotify" />
-                                </td>
-                            </tr>
-
-
                             <tr >
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
                                     <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>

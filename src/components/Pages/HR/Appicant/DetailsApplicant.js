@@ -39,13 +39,27 @@ function DetailsApplicant() {
                 <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div className="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                         <h6 className="text-white text-capitalize ps-3">
-                            Vacancy Details
+                            Applicant Details
                         </h6>
                     </div>
                 </div>
                 <div className="card-body px-0 pb-2">
                     <div className="table-responsive">
                         <table className="table align-items-center justify-content-center mb-0 table-bordered ">
+
+                            
+
+                            <tr className='p-3'>
+                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
+                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
+                                        Applicant Avatar:
+                                    </span>
+                                </th>
+                                <td>
+                                    <img src={apiData.avatar}
+                                        className="" alt="spotify" height="400px" />
+                                </td>
+                            </tr>
 
                             <tr className='p-3'>
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
@@ -59,19 +73,6 @@ function DetailsApplicant() {
                                     </span>
                                 </td>
                             </tr>
-
-                            <tr className='p-3'>
-                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
-                                    <span className="text-xs font-weight-bold ml-5 pl-5" style={{ padding: "20px" }}>
-                                        Applicant Avatar:
-                                    </span>
-                                </th>
-                                <td>
-                                    <img src={apiData.avatar}
-                                        className="" alt="spotify" />
-                                </td>
-                            </tr>
-
 
                             <tr >
                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ml-5 pl-5" >
