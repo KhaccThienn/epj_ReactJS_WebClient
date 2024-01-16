@@ -5,8 +5,6 @@ const axiosInstance = axios.create({
     headers: { 'Content-Type': 'application/json' },
 });
 
-
-
 //default url
 export const get = async (url, config = {}) => {
     const res = await axiosInstance.get(url, config);

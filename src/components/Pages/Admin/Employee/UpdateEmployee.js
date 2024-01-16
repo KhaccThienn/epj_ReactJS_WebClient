@@ -7,7 +7,6 @@ import Swal from 'sweetalert2';
 function UpdateEmployee() {
     const { id } = useParams();
 
-
     const initData = {
         employee_Number: "",
         employee_Name: "",
