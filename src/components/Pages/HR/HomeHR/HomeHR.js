@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectUserData } from '../../../../redux/reducers/user'
-import * as EmployeeService from '../../../../services/EmployeeService'
 function HomeHR() {
     const userData = useSelector(selectUserData);
 
